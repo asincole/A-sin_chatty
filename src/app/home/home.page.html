@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="chat-box">
+    <div class="message-area">
+      <div class="message" *ngFor="let message of messages" [ngClass]="getClasses(message.type)">
+        <p>{{message.text}}</p>
+      </div>
+    </div>
+    <div class="emo-area">
+      <app-emoji-panel [showEmojis]="showEmojis" [result]="score" (EmojiSelect)="selectEmoji($event)"></app-emoji-panel>
+
+    </div>
+    <div class="input-area">
+      <form [formGroup]="chatForm">
+        <ion-input type="text" id="message" formControlName="text" placeholder="Say something nice..."></ion-input>
+        <button (click)="sendMessage()">
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
