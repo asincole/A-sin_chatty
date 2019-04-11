@@ -6,7 +6,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./emoji-panel.component.scss']
 })
 export class EmojiPanelComponent implements OnInit {
-  @Input() result = {};
+  @Input() result: Result;
   @Input() showEmojis = false;
   @Output() EmojiSelect: EventEmitter<string> = new EventEmitter();
   emojiList = {
@@ -29,4 +29,8 @@ export class EmojiPanelComponent implements OnInit {
   ngOnInit() {
   }
 
+}
+
+interface Result {
+  tone?: any;
 }
