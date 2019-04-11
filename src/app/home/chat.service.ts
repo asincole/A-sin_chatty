@@ -6,8 +6,8 @@ import { v4 } from 'uuid';
   providedIn: 'root'
 })
 export class ChatService {
-  baseUrl = '<server-url>';
-  // baseUrl = 'https://localhost:5001/api/';
+  // baseUrl = '<server-url>';
+  baseUrl = 'https://pushercole.azurewebsites.net/api/';
 
   constructor(private http: HttpClient) { }
 
